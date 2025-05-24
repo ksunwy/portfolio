@@ -12,7 +12,7 @@ const Hero = () => {
           <h1 className="text-7xl leading-[120%] font-extrabold bg-gradient-to-r from-purple-500 to-green-500 text-transparent bg-clip-text">
             Hi, I'm ksunnwy
           </h1>
-          <p className="text-4xl text-[#6671A3] my-16 max-w-[60rem]">
+          <p className="text-4xl text-[#6671A3] my-16 max-w-[30rem] text-center lg:max-w-[60rem] w-full mx-auto">
             Crafting <span className="text-green-500 font-bold">saleable</span> & visually <span className="text-purple-500 font-bold">striking</span> websites with
             code, creativity & a touch of magic.
           </p>
@@ -25,7 +25,7 @@ const Hero = () => {
             <a href="https://www.behance.net/ksunnwy" target="_blank" className="text-purple-500 hover:text-purple-700">
               <Image src={"/behance.png"} alt="behance" width={35} height={35} />
             </a>
-            <a href="t.me/ksunnw" target="_blank" className="text-green-500 hover:text-green-700">
+            <a href="https://t.me/ksunnw" target="_blank" className="text-green-500 hover:text-green-700">
               <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M37 2L17.75 21.25" stroke="#3C82F6" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M37 2L24.75 37L17.75 21.25L2 14.25L37 2Z" stroke="#3C82F6" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />

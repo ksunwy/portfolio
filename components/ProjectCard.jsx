@@ -1,6 +1,6 @@
 const ProjectCard = ({ title, description, technologies, link }) => {
     return (
-        <div className="bg-white rounded-3xl shadow-lg p-10 m-4 w-full max-w-[64.46rem]">
+        <div className="bg-white rounded-3xl shadow-lg p-10 m-4 w-full max-w-[40rem] lg:max-w-[64.46rem]">
             <div className="flex items-center mb-12">
                 <div className="bg-purple-200 p-3 rounded-lg mr-6">
                     Icon

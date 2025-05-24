@@ -29,7 +29,7 @@ const Form = () => {
   };
 
   return (
-    <section className="flex justify-center items-center min-h-screen">
+    <section className="flex justify-center items-center min-h-screen max-w-[40rem] mx-auto lg:max-w-full">
       <div className="bg-white rounded-3xl shadow-lg p-12 m-4">
         <h1 className="text-6xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-green-500 text-transparent bg-clip-text">
           Ready to work together?
@@ -81,7 +81,7 @@ const Form = () => {
           <a href="https://www.behance.net/ksunnwy" target="_blank" className="text-purple-500 hover:text-purple-700">
             <Image src={"/behance.png"} alt="behance" width={35} height={35} />
           </a>
-          <a href="t.me/ksunnw" target="_blank" className="text-green-500 hover:text-green-700">
+          <a href="https://t.me/ksunnw" target="_blank" className="text-green-500 hover:text-green-700">
             <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M37 2L17.75 21.25" stroke="#3C82F6" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M37 2L24.75 37L17.75 21.25L2 14.25L37 2Z" stroke="#3C82F6" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />

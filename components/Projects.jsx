@@ -30,7 +30,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="w-full h-[100dvh] flex flex-col gap-28 items-center justify-center">
+    <section className="w-full h-[100dvh] flex flex-col gap-28 items-center justify-center my-96">
       <div className="text-center mb-4">
         <h1 className="text-6xl font-bold mb-12 text-[#383f5c]">Projects</h1>
         <p className="text-[#6671A3] max-w-[57rem] text-3xl leading-10">
