@@ -3,31 +3,35 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const telegramMessage = encodeURI(
-      `Message from:\n    ${name}\nEmail of ${name}:\n    ${email}\nMessage of ${name}:\n    ${message}`
-    );
-    const telegramUrl = `https://t.me/ksunnw?text=${telegramMessage}`;
+    setLoading(true);
 
-    window.open(telegramUrl, '_blank');
+    try {
+      const res = await fetch('/api/send-message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Ошибка при отправке');
+
+      alert('Сообщение отправлено!');
+      setFormData({ name: '', email: '', message: '' }); 
+    } catch (error) {
+      alert('Не удалось отправить сообщение.');
+    } finally {
+      setLoading(false);
+    }
   };
-
   return (
     <section className="flex justify-center items-center min-h-screen max-w-[40rem] mx-auto lg:max-w-full">
       <div className="bg-white rounded-3xl shadow-lg p-12 m-4">
@@ -69,7 +73,7 @@ const Form = () => {
             type="submit"
             className="bg-[linear-gradient(121.6deg,#C4DAFD_54.43%,#E6D5FF_100.67%)] text-[#1C4ED8] text-3xl font-bold px-6 py-4 rounded-2xl"
           >
-            Send Message
+            {loading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
         <div className="mt-10 flex justify-center space-x-10">
