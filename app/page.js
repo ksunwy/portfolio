@@ -8,7 +8,6 @@ import Header from "@/components/Header.jsx";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Form from "@/components/Form";
-import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -36,7 +35,6 @@ export default function Home() {
           <Projects />
           <Form />
         </main>
-          {/* <Footer /> */}
       </div>
     </div>
   );
