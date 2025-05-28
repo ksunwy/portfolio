@@ -56,7 +56,7 @@ const Form = () => {
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder="Your Email/Your telegram"
             className="w-full p-3 border border-gray-300 rounded-lg bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-500"
             onChange={handleChange}
             required
