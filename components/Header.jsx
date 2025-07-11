@@ -1,26 +1,35 @@
+import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react";
+
+export function remToPx(rem) {
+  if (typeof window === 'undefined') {
+    return Math.floor(rem * 16).toString();
+  }
+  const rootFontSize = parseFloat(
+    getComputedStyle(document.documentElement).fontSize
+  );
+  return Math.floor(rem * rootFontSize).toString();
+}
 
 const header = () => {
-  return (
-    <header className="absolute top-0 left-0 flex flex-row items-center justify-between w-full p-10 z-10">
-      <Link href="/" className="lg:w-[13.56rem]">
-        <svg width="46" height="32" viewBox="0 0 46 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.2759 7.81818C11.2759 7.81818 3 14.6364 3 16C3 17.3636 11.2759 22.8182 11.2759 22.8182M27.8276 1L18.1724 31M36.1034 7.81818C36.1034 7.81818 43 14.1464 43 16C43 17.8536 36.1034 22.8182 36.1034 22.8182" stroke="#3C82F6" strokeWidth="5" />
-        </svg>
+  const [width, setWidth] = useState(162); 
+  const [height, setHeight] = useState(38);
 
+  useEffect(() => {
+    setWidth(remToPx(10.125));
+    setHeight(remToPx(2.375));
+  }, []);
+  return (
+    <header className="fixed top-0 left-0 flex flex-row items-center justify-between w-full px-12 py-10 z-10 header-bg">
+      <Link href="/" className="w-12 h-12">
+        <svg width="100%" height="100%" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.38718 47.8323C6.4737 48.8755 9.36917 49.0135 11.4814 48.6669C13.5936 48.3202 17.1671 47.7176 19.4102 46.163C32.0743 37.386 10.4875 -9.68505 6.36401 6.2772C3.5526 17.1604 -1.06239 34.247 10.1977 34.6318C23.6409 35.0913 32.7594 -6.09243 45.3245 6.2772C56.2257 17.0086 26.8641 32.0003 35.8421 44.3113C36.482 45.1887 37.7578 46.2021 38.8295 46.3788C41.3187 46.789 42.851 45.345 42.851 45.345" stroke="#6F96D0" strokeWidth="6" />
+        </svg>
       </Link>
-      <div className="flex items-center gap-10">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-bold text-[#1C4ED8] text-3xl hidden lg:flex">
-          Home
-        </button>
-        <button onClick={() => window.scrollTo({ top: 900, behavior: 'smooth' })} className="font-bold text-[#905FE0] text-3xl">
-          Projects
-        </button>
-        <button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })} className="font-bold text-green-700 text-3xl">
-          Text me
-        </button>
-      </div>
-      <a target="_blank" href="https://t.me/ksunnw" className="px-6 py-4 bg-[#BBF7D0] text-green-700 text-3xl font-bold rounded-2xl shadow lg:w-[13.56rem]">Let's Work</a>
+      <a target="_blank" href="https://t.me/ksunnw" className="px-8 py-6 w-52 bg-[#89B0EA] rounded-lg flex items-center justify-center">
+        <Image src={"/img/reach_me.svg"} alt="Reach me" width={width} height={height} />
+      </a>
     </header>
   )
 }

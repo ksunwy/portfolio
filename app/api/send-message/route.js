@@ -17,12 +17,12 @@ export async function POST(req) {
     });
 
     if (!res.ok) {
-      return new Response(JSON.stringify({ error: "Ошибка Telegram API" }), { status: 500 });
+      return new Response(JSON.stringify({ error: "Error Telegram API" }), { status: 500 });
     }
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ error: "Ошибка сервера" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Server error" }), { status: 500 });
   }
 }

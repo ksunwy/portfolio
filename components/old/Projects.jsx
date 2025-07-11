@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/old/ProjectCard";
 // https://release-trading-ai.heavens.pro/
 
 const projects = [

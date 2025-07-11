@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Jindo';
+  src: url('/fonts/JindoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --color-blue: #6671A3;
-  --color-blue-light: #8CB2E5;
-  --color-purple: #B9A3E2;
-  --color-green: #55E6A9;
   --font-montserrat-sans: 'Montserrat Alternates', sans-serif;
+  --font-jindo: 'Jindo', sans-serif;
 }
 
 html,
@@ -21,12 +26,17 @@ body,
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
-  font-family: var(--font-montserrat-sans);
+  /* font-family: var(--font-montserrat-sans); */
+  font-family: var(--font-jindo), sans-serif;
 
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   min-height: 100dvh;
+}
+
+body {
+  background: #FFF9EF;
 }
 
 a,
@@ -52,13 +62,13 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #a892e5 0%, #72d4a3 100%);
+  background: #D7E5F9;
   border-radius: 17px;
 }
 
 ::selection {
   color: #fff;
-  background-color: #a892e5;
+  background-color: #D7E5F9;
 }
 
 img,
@@ -174,4 +184,38 @@ html {
 
 .greenIcon:hover path {
   stroke: #15803d;
+}
+
+.header-bg {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0px 30px 70px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(35px);
+}
+
+.slider {
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 0) rotateX(0deg) rotateY(-25deg) rotateZ(-120deg);
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1000ms;
+}
+
+.card {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  transform: rotateX(10deg) rotateY(-10deg) rotateZ(130deg);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: -160px;
+  margin-bottom: -160px;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1000ms;
+  border: 3px solid #fff;
+}
+
+@media screen and (max-width: 851px) {
+  .card {
+    margin-top: -200px;
+    margin-bottom: -200px;
+  }
 }
