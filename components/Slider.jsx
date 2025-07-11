@@ -84,7 +84,7 @@ const Slider = () => {
             onMouseOut={() => handleMouseOut(card.id)}
             style={{ position: "relative", left: "0%", zIndex: card.id }}
           >
-            <Image src={card.image} alt={`img${card.id}`} width={400} height={400} />
+            <Image src={card.image} alt={`img${card.id}`} width={400} height={400} loading="lazy" />
           </div>
         ))}
       </div>

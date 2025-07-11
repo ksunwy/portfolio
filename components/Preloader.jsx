@@ -11,7 +11,7 @@ const Preloader = ({ isLoaded }) => {
   useEffect(() => {
     gsap.fromTo(
       barRef.current,
-      { scaleX: 0, borderRadius: '10px' },
+      { scaleX: 0, borderRadius: '30px' },
       {
         scaleX: 1,
         borderRadius: '50px',
@@ -43,6 +43,7 @@ const Preloader = ({ isLoaded }) => {
       ref={preloaderRef}
       className="fixed top-0 left-0 w-full h-screen z-[999] bg-[#FFF9EF] flex items-center justify-center"
     >
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-44 rounded-[50px] w-[40%] lg:w-[30%] border-[4px] lg:border-[8px] border-solid border-[#89B0EA] bg-transparent"></div>
       <div
         ref={barRef}
         className="h-20 w-1/4 bg-[#89B0EA]"
