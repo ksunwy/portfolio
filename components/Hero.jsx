@@ -23,10 +23,10 @@ const Hero = () => {
     <div className="relative w-[100dvw] h-[100dvh]">
       {/* <Preloader isLoaded={true} /> */}
       <FallingText />
-      <h1 className="absolute top-[45%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-[#89B0EA] flex flex-col items-center justify-center font-bold text-[120px]">
+      <h1 className="absolute top-[45%] left-[50%] -translate-x-[50%] -translate-y-[50%] cursor-default text-[#89B0EA] flex flex-col items-center justify-center font-bold text-[120px]">
         Hello, I'm
       </h1>
-      <h2 className="absolute top-[58%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-[60px] font-bold text-nowrap text-[#89B0EA]">Frontend developer</h2>
+      <h2 className="absolute top-[58%] left-[50%] -translate-x-[50%] -translate-y-[50%] cursor-default text-[60px] font-bold text-nowrap text-[#89B0EA]">Frontend developer</h2>
 
       {/* <div className="w-full h-full pointer-events-none">
         <Suspense fallback={<div>Loading...</div>}>
